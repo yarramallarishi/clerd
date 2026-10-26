@@ -1,3 +1,4 @@
+🙌https://clerd.yarramallarishi.workers.dev/🙌
 # clerd — Full-Stack Discord Alternative on Cloudflare Free Plan
 
 Includes everything Discord offers:
