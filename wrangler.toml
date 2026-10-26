@@ -1,0 +1,39 @@
+name = "clerd"
+main = "src/worker/index.ts"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist/client"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "clerd-production"
+database_id = "73b47f23-29fa-4bb8-a3ef-de2defe4b4a8"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "MEDIA_BUCKET"
+bucket_name = "clerd-media"
+
+[durable_objects]
+bindings = [
+  { name = "CHANNEL_ROOM", class_name = "ChannelRoom" }
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ChannelRoom"]
+
+[ai]
+binding = "AI"
+
+[vars]
+AUTH0_DOMAIN = "dev-oakunj5zlns5mfz4.us.auth0.com"
+AUTH0_AUDIENCE = "https://api.clerd.example.com"
+AUTH0_CLIENT_ID = "uSaMqVUqbOKwWM7xxAtZAOO16xmSPuWn"
+SFU_WS_URL = "wss://sfu.clerd.example.com"
+TENOR_API_KEY = "LIVDSRZULELA"
+MAX_UPLOAD_BYTES = "5242880"

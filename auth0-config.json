@@ -1,0 +1,31 @@
+{
+  "spaApplication": {
+    "name": "clerd Web Client",
+    "app_type": "spa",
+    "oidc_conformant": true,
+    "callbacks": [
+      "http://localhost:5173",
+      "https://clerd.<your-subdomain>.workers.dev"
+    ],
+    "allowed_logout_urls": [
+      "http://localhost:5173",
+      "https://clerd.<your-subdomain>.workers.dev"
+    ],
+    "web_origins": [
+      "http://localhost:5173",
+      "https://clerd.<your-subdomain>.workers.dev"
+    ],
+    "grant_types": ["authorization_code", "refresh_token"],
+    "jwt_configuration": {
+      "alg": "RS256",
+      "lifetime_in_seconds": 36000
+    }
+  },
+  "resourceServerApi": {
+    "name": "clerd Worker API",
+    "identifier": "https://api.clerd.example.com",
+    "signing_alg": "RS256",
+    "allow_offline_access": true,
+    "token_lifetime": 86400
+  }
+}
