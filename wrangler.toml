@@ -14,10 +14,6 @@ database_name = "clerd-production"
 database_id = "73b47f23-29fa-4bb8-a3ef-de2defe4b4a8"
 migrations_dir = "migrations"
 
-[[r2_buckets]]
-binding = "MEDIA_BUCKET"
-bucket_name = "clerd-media"
-
 [durable_objects]
 bindings = [
   { name = "CHANNEL_ROOM", class_name = "ChannelRoom" }

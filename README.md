@@ -11,6 +11,8 @@ Includes everything Discord offers:
 - **Workers AI Chat Summarization** (`@cf/meta/llama-3.1-8b-instruct`)
 - **One-Click Discord Server Migration Tool** (Discord API v10)
 
+Media object storage is not currently configured; avatar/banner and attachment uploads are not available. The chat UI and Worker do not require a paid R2 bucket.
+
 ## Quick Start
 1. `npm install`
 2. In Auth0, set the SPA's **Allowed Callback URLs**, **Allowed Logout URLs**, and **Allowed Web Origins** to `http://localhost:5173`. The callback and logout URLs must also include your deployed app origin when you deploy.

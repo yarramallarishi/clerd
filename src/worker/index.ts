@@ -7,14 +7,12 @@ import { generateSnowflake, UserBadges } from "./snowflake";
 
 export interface Env {
   DB: D1Database;
-  MEDIA_BUCKET: R2Bucket;
   CHANNEL_ROOM: DurableObjectNamespace<ChannelRoom>;
   AI: Ai;
   ASSETS: Fetcher;
   AUTH0_DOMAIN: string;
   AUTH0_AUDIENCE: string;
   TENOR_API_KEY: string;
-  R2_HMAC_SECRET: string;
 }
 
 export const Perm = {
@@ -53,7 +51,6 @@ async function verifyAuth0Token(token: string, env: Env): Promise<JWTPayload> {
 }
 
 app.use("/api/*", async (c, next) => {
-  if (c.req.path.startsWith("/api/media/") && c.req.method === "GET") return next();
   const authHeader = c.req.header("Authorization");
   const queryToken = c.req.query("token");
   const rawToken = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : queryToken;
